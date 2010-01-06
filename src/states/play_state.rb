@@ -1,7 +1,7 @@
 class PlayState < Jemini::GameState
   def load
     truck = create :Truck
-    truck.position = scree_size.half 
+    truck.position = screen_size.half 
   end
 end
 
