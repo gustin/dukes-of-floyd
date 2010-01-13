@@ -1,7 +1,7 @@
 class Truck < Jemini::GameObject
   MOVEMENT_RATE = 0.5 
   has_behavior :DrawableImage
-  has_behavior :HandleEvents
+  has_behavior :HandlesEvents
 
   def load
     self.image = :truck
