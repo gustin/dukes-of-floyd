@@ -22,7 +22,7 @@ begin
   # Change :HelloState to point to the initial state of your game
   game = Jemini::Game.new :title => 'Dukes of Floyd',
                           :screen_size => Vector.new(800, 600),
-                          :initial_state => :PlayState,
+                          :initial_state => :IntroState,
                           :fullscreen => false
   game.app
 rescue => e
