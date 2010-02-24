@@ -1,8 +1,10 @@
-ls
 
+ls
+ 
 cd dev
 
 cd jemini
+
 
 
 cd dukes_of_floyd
