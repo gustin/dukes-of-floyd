@@ -18,7 +18,7 @@
     (Done) Ensure the angle cannot exceed 0 and 180 degrees relative to the car base
     (Done) When the mouse button is released swing camera back to oroiginal position
 (Done) As a player I should be able to adjust my speed with the 'up' key
-    (Done) Ensure the speed is limited between 0 and 100
+    (Done) Ensure the speed is limited between 0 and 130
 (Done) As a player I should be able to see my car on the terrain or road
     
 (Done) As a player I should be able to die when I take too much damage.
