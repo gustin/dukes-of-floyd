@@ -23,7 +23,7 @@ begin
   game = Jemini::Game.new :title => 'Dukes of Floyd',
                           :screen_size => Vector.new(800, 600),
                           :initial_state => :IntroState,
-                          :fullscreen => false
+                          :fullscreen => true
   game.app
 rescue => e
   warn e
