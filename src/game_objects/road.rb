@@ -6,7 +6,11 @@ class Road < Jemini::GameObject
 
   def load
     self.image = :road
-
-    self.move(0, -0.5)
+    handle_event :start_engine do |message|
+      self.move(0, -0.5)
+    end
+    handle_event :stop_engine do |message|
+    self.move(0, -0.0)
+    end
   end
 end
