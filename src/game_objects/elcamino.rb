@@ -7,22 +7,23 @@ class Elcamino < Jemini::GameObject
   def load
     self.image = :elcamino
     @movement_rate = 0.5 
+    elcamino = self
     handle_event :move_left do |message|
+      puts position
       if position.x > EDGE_OF_LEFT_SCREEN
-        position.x -= @gameobject.movement_rate * message.delta 
-        puts position
+        position.x -= elcamino.movement_rate * message.delta 
       end
       if position.x == 299.0 
-       @game_object.movement_rate = 0.1   
+       elcamino.movement_rate = 0.1   
       end
     end
     handle_event :move_right do |message|
+      puts position
       if position.x < self.game_state.screen_size.x
-        position.x += @movement_rate * message.delta
-        puts position
+        position.x += elcamino.movement_rate * message.delta
       end  
       if position.x == 472.5 
-       @movement_rate = 0.0
+        elcamino.movement_rate = 0.1
       end
     end
   end
