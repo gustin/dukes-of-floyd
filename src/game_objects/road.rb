@@ -10,7 +10,12 @@ class Road < Jemini::GameObject
       self.move(0, -0.5)
     end
     handle_event :stop_engine do |message|
-    self.move(0, -0.0)
+      self.move(0, -0.0)
     end
   end
+
+  def whats_up
+    puts 'yo yo'
+  end
+
 end

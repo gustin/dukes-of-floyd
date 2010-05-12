@@ -1,9 +1,11 @@
 class Elcamino < Jemini::GameObject
   attr_accessor :movement_rate
+  attr_accessor :road
+
   SLOW_SPEED = 0.1
   NORMAL_SPEED = 0.5
-  EDGE_OF_LEFT_ROAD = 208.0
-  EDGE_OF_RIGHT_ROAD = 549.0
+  EDGE_OF_LEFT_ROAD = 299.0
+  EDGE_OF_RIGHT_ROAD = 472.50
   EDGE_OF_LEFT_SCREEN = 29.0
   has_behavior :DrawableImage
   has_behavior :HandlesEvents
@@ -19,8 +21,9 @@ class Elcamino < Jemini::GameObject
       end
       if position.x <= EDGE_OF_LEFT_ROAD
        elcamino.movement_rate = SLOW_SPEED
+       road.whats_up
       end
-      if on_road(position.x) 
+      if position.x > EDGE_OF_LEFT_ROAD
         elcamino.movement_rate = NORMAL_SPEED
       end
     end
@@ -32,16 +35,10 @@ class Elcamino < Jemini::GameObject
       if position.x >= EDGE_OF_RIGHT_ROAD
         elcamino.movement_rate = SLOW_SPEED
       end
-      if on_road(position.x)
+      if position.x < EDGE_OF_RIGHT_ROAD
         elcamino.movement_rate = NORMAL_SPEED
       end
     end
   end
-   
-   def on_road(position_x) 
-     if (position_x > EDGE_OF_LEFT_ROAD) and (position_x < EDGE_OF_RIGHT_ROAD)
-       return true 
-     end
-   end
 end
 
