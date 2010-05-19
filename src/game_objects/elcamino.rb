@@ -4,8 +4,8 @@ class Elcamino < Jemini::GameObject
 
   SLOW_SPEED = 0.1
   NORMAL_SPEED = 0.5
-  EDGE_OF_LEFT_ROAD = 299.0
-  EDGE_OF_RIGHT_ROAD = 472.50
+  EDGE_OF_LEFT_ROAD = 199.0
+  EDGE_OF_RIGHT_ROAD = 578.50
   EDGE_OF_LEFT_SCREEN = 29.0
   has_behavior :DrawableImage
   has_behavior :HandlesEvents

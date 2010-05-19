@@ -7,6 +7,7 @@ class PlayState < Jemini::GameState
     menu_handler.handle_event(:quit) { quit_game }
 
     road = create :Road
+    road.play_state = self
     road.position = screen_size.half
 
     elcamino = create :Elcamino
