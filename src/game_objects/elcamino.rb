@@ -21,10 +21,11 @@ class Elcamino < Jemini::GameObject
       end
       if position.x <= EDGE_OF_LEFT_ROAD
        elcamino.movement_rate = SLOW_SPEED
-       road.whats_up
+       road.movement_rate = Road::SLOW_SPEED 
       end
       if position.x > EDGE_OF_LEFT_ROAD
         elcamino.movement_rate = NORMAL_SPEED
+        road.movement_rate = Road::NORMAL_SPEED
       end
     end
     handle_event :move_right do |message|
@@ -34,9 +35,11 @@ class Elcamino < Jemini::GameObject
       end  
       if position.x >= EDGE_OF_RIGHT_ROAD
         elcamino.movement_rate = SLOW_SPEED
+        road.movement_rate = Road::SLOW_SPEED
       end
       if position.x < EDGE_OF_RIGHT_ROAD
         elcamino.movement_rate = NORMAL_SPEED
+        road.movement_rate = Road::NORMAL_SPEED
       end
     end
   end
